@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Две колонки</title>
+  <style type="text/css">
+   .header, .sidebar, .content, .footer { 
+    padding: 10px; /* Поля */
+    border: solid 1px #000; /* Параметры рамки */
+    background: #e3e8cc; /* Цвет фона */
+   }
+   .header { /* Верхняя часть с заголовком */
+    background: #e3e8cc; /* Цвет фона */
+    font-size: 24px; /* Размер шрифта */
+   }
+   .layout {
+    margin: 15px 0; /* Отступы сверху и снизу */ 
+    overflow: hidden; /* Отменяем действие float */
+    min-width: 800px; /* Минимальная ширина */
+    max-width: 1200px; /* Максимальная ширина */
+   }
+   .sidebar { /* Навигация по сайту */
+    width: 100px; /* Ширина меню */
+    float: left; /* Состыковка с другим слоем по горизонтали */
+   }
+   .sidebar ul {
+    list-style: none; /* Убираем маркеры */
+    padding: 0; /* Убираем отступы */
+   }
+   .content { /* Основное содержание страницы */
+    margin-left: 130px; /* Отступ слева */
+   }
+  </style>
+ </head>
+ <body>
+  <div class="header">Helios</div>
+  <div class="layout">
+   <div class="sidebar">
+    <h2><a href="/main.html">Меню</a></h2>
+    <ul>
+     <li><a href="/organizations.html">Организации</a></li>
+     <li><p></li>
+     <li><a href="/registrators.html">Регистраторы</a></li>
+     <li><p></li>
+     <li><a href="/stampseals.html">Пломбы</a></li>
+     <li><p></li>
+     <li><a href="/workers.html">Сотрудники</a></li>
+    </ul>
+   </div>
+   <div class="content">
+                {%block content%}
+                {%endblock%}
+   </div>
+  </div>
+  <div class="footer">Подвал</div>
+ </body>
+</html>

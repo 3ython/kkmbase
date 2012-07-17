@@ -1,0 +1,28 @@
+{%block content%}
+    <head>
+        <title>Django Bookmarks - User Login</title>
+    </head>
+{% if form.errors %}
+    <center>
+    <form>
+        <DT><p>  </p></DT>
+        <DT><p>  </p></DT>
+        <DT class = dt1 >Ваше имя пользователя или пароль не совпадают.</DT>
+        <DT><p>  </p></DT>
+        <DT class = dt1>Пожалуйста, попробуйте еще раз.</DT>
+    </form>
+    </center>
+{% endif %}
+<form method = "post" action = ".">{% csrf_token %}
+     <DT class="dt1"><h1>Авторизация</h1></DT>
+        <label for = "id_username">логин: </label>
+           {{ form.username }}
+     <DT class="block1"><h1> </h1></DT>
+        <label for = "id_password">пароль:</label>
+           {{ form.password }}
+     <DT class="block1"><h1> </h1></DT>
+     
+    <input  class="FormFieldStyle" type="hidden" name="next" value="/" />
+    <input  class="button"         type="submit" value="вход" />
+    </form>
+{%endblock%}

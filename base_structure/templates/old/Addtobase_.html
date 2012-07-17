@@ -1,0 +1,127 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+body{background: #092e20;}
+ul.errorlist {    
+        border                 : solid 1px #ab5603; /* Параметры рамки */
+        margin                 : 0;
+        display                : inline-block;
+        padding                : 0;
+        cursor                 : e-resize
+        -webkit-border-radius  : 6px;
+        -moz-border-radius     : 6px;
+        border-radius          : 6px;
+       #font-family            : 'Jura', serif; 
+        font-weight            : 900;
+        font-size              : 15px; 
+	}
+.errorlist li {
+        color                  : #ab5603;
+        display                : inline;
+        font-size              : 15px;
+        margin                 : 0 0 2px;
+        padding                : 0px 20px;
+        -webkit-border-radius  : 6px;
+        -moz-border-radius     : 6px;
+        border-radius          : 6px;
+       #font-family            : 'Jura', sans-serif;
+        font-weight            : 900;
+        font-size              : 15px; 
+}
+form {
+	    background-color       : #e0ffb8;
+        border                 : solid 5px #487858; /* Параметры рамки */
+        -webkit-border-radius  : 4px;
+        -moz-border-radius     : 4px;
+        border-radius          : 4px;
+        display                : inline-block;
+        padding                : 10 20 50;
+       #font-family            : 'Jura', sans-serif;
+        font-weight            : 900;
+        font-size              : 15px;
+}
+
+p{
+    margin	          : 0;
+    display	          : inline-block;
+    padding               : 10 100 0;
+   #font-family           : 'Jura', sans-serif;
+    font-weight           : 900;
+    font-size             : 15px;
+}
+.button{
+    background            : #48785f;
+    color                 : #ffffff;
+    border-radius         : 6px;
+    -webkit-border-radius : 6px;
+    -moz-border-radius    : 6px;
+    border                : solid 6px #48785f;
+   #font-family           : 'Jura', sans-serif;
+    font-weight           : 900;
+    font-size             : 15px;
+}
+.button:hover {
+    background            : #e0ffb8;
+    color                 : #000000;
+    border                : solid 6px #48785f;
+   #font-family           : 'Jura', sans-serif;
+    font-weight           : 900;
+    font-size             : 15px; 
+}
+.button:focus {
+    background           : #e0ffb8;
+    color                : #000000;
+    border               : solid 6px #48785f;
+   #font-family          : 'Jura', sans-serif;
+    font-weight          : 900;
+    font-size            : 15px;
+}
+.FormFieldStyle { 
+    -webkit-border-radius    : 6px;
+    -moz-border-radius       : 6px;
+    border-radius            : 6px;
+    font-family              : 'Jura', sans-serif;
+    font-weight              : 900;
+    font-size                : 15px;
+}
+
+</style>
+    <title>Add to base.</title></head><body>
+    <center>
+        
+  <center>
+    <dt></dt><h1> </h1>
+    <form action="/add_publisher_form/" method="post">
+    <dt></dt><h1> </h1><dt>
+        </dt><table>
+          
+        <tbody><tr><th><label for="id_name">Имя:</label></th><td><ul 
+class="errorlist"><li>Обязательное поле.</li></ul><input id="id_name" 
+class="FormFieldStyle" name="name" maxlength="30" type="text"></td></tr>
+<tr><th><label for="id_address">Адрес:</label></th><td><ul 
+class="errorlist"><li>Обязательное поле.</li></ul><input id="id_address"
+ class="FormFieldStyle" name="address" maxlength="50" type="text"></td></tr>
+<tr><th><label for="id_city">Город:</label></th><td><ul 
+class="errorlist"><li>Обязательное поле.</li></ul><input id="id_city" 
+class="FormFieldStyle" name="city" maxlength="60" type="text"></td></tr>
+<tr><th><label for="id_state_province">Регион:</label></th><td><ul 
+class="errorlist"><li>Обязательное поле.</li></ul><input 
+id="id_state_province" class="FormFieldStyle" name="state_province" 
+maxlength="30" type="text"></td></tr>
+<tr><th><label for="id_country">Страна:</label></th><td><ul 
+class="errorlist"><li>Обязательное поле.</li></ul><input id="id_country"
+ class="FormFieldStyle" name="country" maxlength="50" type="text"></td></tr>
+<tr><th><label for="id_website">Вебсайт:</label></th><td><input 
+id="id_website" class="FormFieldStyle" name="website" type="text"></td></tr>
+ 
+    </tbody></table>
+    <p><input name="add" class="button" value=" добавить " type="submit"></p>
+    <dt><p><input class="button" value="на главную" 
+onclick="location.href='/main/'" type="button"></p></dt>
+    </form>
+    </center>
+
+
+    </center>
+</body></html>

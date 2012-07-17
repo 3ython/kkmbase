@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="jquery-1.6.1.min.js"></script>
+</head>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+ 
+	$(".btn-slide").click(function(){
+		$("#panel").slideToggle("slow");
+		$(this).toggleClass("active"); return false;
+	});
+	
+	 
+});
+</script> 
+
+<style type="text/css">
+.imgborder {
+  -webkit-border-radius    : 5px;
+  moz-border-radius        : 5px;
+  border                   : 50px ;solid #ffffff;
+  border-radius            : 10px;
+  margin-left              : 2em;
+  margin-bottom            : 1em;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 570px;
+	font: 75%/120% Arial, Helvetica, sans-serif;
+}
+
+body2 {
+	font                : 0.9em Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background-color    : #6d7365;
+	background-image    : url(http://dl.dropbox.com/u/27448531/gradientline.png);
+	background-repeat   : repeat-x;
+	background-position : 50% 0%;
+	margin              : 0;
+        margin-bottom       : 2em;
+
+a:focus {
+	outline: none;
+}
+#panel {
+	background: #754c24;
+	height: 200px;
+	display: none;
+}
+.slide {
+	margin: 0;
+	padding: 0;
+	border-top: solid 4px #422410;
+	background: url(images/btn-slide.gif) no-repeat center top;
+}
+.btn-slide {
+	background: url(images/white-arrow.gif) no-repeat right -50px;
+	text-align: center;
+	width: 144px;
+	height: 31px;
+	padding: 10px 10px 0 0;
+	margin: 0 auto;
+	display: block;
+	font: bold 120%/100% Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+}
+.active {
+	background-position: right 12px;
+
+
+
+}
+
+</style>
+<body>
+     <div id="panel"> 
+	<!-- you can put content here --> 
+     </div> 
+     <p class="slide"><a href="#" class="btn-slide">Slide Panel</a></p> 
+
+    <div align="center">
+      <p>    
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+      </p>
+      <p>    
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+      </p>
+
+      <p>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+      </p>
+      <p>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+      </p>
+
+      <p>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+      </p>
+      <p>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+         <img src="http://dl.dropbox.com/u/13566044/full.jpg" alt="food" width="100" class="imgborder"/>
+      </p>
+
+
+    </div>
+<p class="slide"><a href="#" class="btn-slide">Slide Panel</a></p>
+</body>
+</html>
