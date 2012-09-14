@@ -28,4 +28,3 @@ urlpatterns = patterns('',
          (r'^stampseals.html/$',   views.stampseals_view),
          (r'^workers.html/$',      views.workers_view),
 )
-         
