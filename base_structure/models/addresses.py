@@ -4,7 +4,9 @@ from django.db import models
 
 class Addresses(models.Model):
     address = models.CharField(u'адрес',
-                max_length=255, blank=True)
+                max_length=255, 
+                blank=True,
+                unique=True)
 
     def __unicode__(self):
         return u'%s' % (self.address)
