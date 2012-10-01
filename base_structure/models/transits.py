@@ -6,8 +6,7 @@ class Transits(models.Model):
 
     transit = models.CharField(u'маршрут проезда',
                      max_length=255,
-                     unique=True,
-                     blank=True)
+                     unique=True)
 
     def __unicode__(self):
         return u'%s' % (self.transit)

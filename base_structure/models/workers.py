@@ -7,11 +7,15 @@ from base_structure.models.workers_status import Workers_status
 class Workers(models.Model):
 
     name = models.CharField(u'Ф.И.О.',
-                             max_length=255)
+                             max_length=255,
+                             unique=True)
 
     status = models.ForeignKey(Workers_status,
                   verbose_name=u'должность',
-                  blank=True)
+                  unique=True,
+                  blank=True,
+                  null=True
+                  )
 
     def __unicode__(self):
         return u'%s,    %s' % (self.name,
