@@ -23,16 +23,44 @@ from base_structure.models.individual_nalog_numbers import Individual_nalog_numb
 from base_structure.models.federal_tax_service_inspection_numbers import Federal_tax_service_inspection_numbers
 from base_structure.models.workers_status import Workers_status
 
-OrganizationsList = pickle.load(file('../kkmbase_copy2/OrganizationsList.pickle'))
+OrganizationsList = pickle.load(file('OrganizationsList.pickle'))
 
 def main():
     for c in OrganizationsList:
-        org_name = Organizations_ownernames(ownername=c['ownername'])
-        org_address = Addresses(address=c['address'])
-        org_telephone = TelephoneNumbers(telephonenumber = c['telephonenumber'])
-        org_transit = Transits(transit=c['transit'])
-        org_worktime = Working_times(working_time = c['working_time'])
-        org_inn = Individual_nalog_numbers(inn=c['inn'])
-        org_inspectnumber = Federal_tax_service_inspection_number(federal_tax_service_inspection_number = c['federal_tax_service_inspection_number'])
-
+        print 'ownername:', c['ownername']
+        if not c['ownername']=='':
+            org_name = Organizations_ownernames(ownername=c['ownername'])
+            org_name.save()
+            
+        print 'address:', c['address']
+        if not c['address']=='':
+            org_address = Addresses(address=c['address'])
+            org_address.save()
+            
+        print 'telephonenumber:', c['telephonenumber']
+        if not c['telephonenumber']=='':
+            org_telephone = TelephoneNumbers(phonenumber = c['telephonenumber'])
+            org_telephone.save
+            
+        print 'transit:', c['transit']
+        if not c['transit'] == '':
+            org_transit = Transits(transit=c['transit'])
+            org_transit.save()
+            
+        print 'working_time:', c['working_time']
+        if not c['working_time']=='':
+            org_worktime = Working_times(working_time = c['working_time'])
+            org_worktime.save()
+            
+        print 'inn:', c['inn']
+        if not c['inn']=='':
+            org_inn = Individual_nalog_numbers(inn=c['inn'])
+            org_inn.save()
+           
+        print 'inspection_number:', c['federal_tax_service_inspection_number']
+        if not c['federal_tax_service_inspection_number']=='':
+            org_inspectnumber = Federal_tax_service_inspection_numbers(federal_tax_service_inspection_number = c['federal_tax_service_inspection_number'])
+            org_inspectnumber.save()
+            
         # o.workers = c['workers']
+        print '_______________________'
