@@ -10,7 +10,7 @@ class Federal_tax_service_inspection_numbers(models.Model):
         blank=True)
 
     def __unicode__(self):
-        return u'%s' % (self.Federal_tax_service_inspection_numbers)
+        return u'%s' % (self.federal_tax_service_inspection_number)
 
     class Meta:
         app_label = 'base_structure'

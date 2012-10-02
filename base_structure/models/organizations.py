@@ -49,7 +49,7 @@ class Organizations(models.Model):
                         blank=True,
                         null=True)
 
-    federal_tax_service_inspection_number = models.ForeignKey(Federal_tax_service_inspection_numbers,
+    inspection_number = models.ForeignKey(Federal_tax_service_inspection_numbers,
                       verbose_name=u'№ ИФНС',
                       max_length=10,
                       blank=True,
@@ -58,7 +58,7 @@ class Organizations(models.Model):
     def __unicode__(self):
         return u'%s, %s, ИФНС №%s' % (self.address,
                                       self.ownername,
-                                      self.federal_tax_service_inspection_number)
+                                      self.inspection_number)
 
     class Meta:
 

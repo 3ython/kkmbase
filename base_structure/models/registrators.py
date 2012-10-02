@@ -63,12 +63,12 @@ class Registrators(models.Model):                                               
                                 max_length=255,
                                 blank=True)
 
-    year_construction = ForeignKey(Year,
-                                verbose_name=u'год выпуска')
+    year_construction = models.ForeignKey(Year,
+                                verbose_name=u'год выпуска',
                                 blank=True, 
                                 null=True)
                                 
-    passport_version_number = ForeignKey(Passport_version,
+    passport_version_number = models.ForeignKey(Passport_version,
                                 blank=True, 
                                 null=True)
     

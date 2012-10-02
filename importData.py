@@ -77,13 +77,13 @@ def main():
             org_inspectnumber = Federal_tax_service_inspection_numbers(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number'])
             org_inspectnumber.save()
         
-        Organizations(ownername=org_name,
+        org = Organizations(ownername=org_name,
                         address=org_address,
                         working_time=org_worktime,
                         inn=org_inn,
                         inspection_number=org_inspectnumber,).save()
-        Organizations.telephonenumber=org_telephone
-        Organizations.transit=org_transit
+        org = Organizations.telephonenumber=org_telephone
+        org = Organizations.transit=org_transit
         
         # o.workers = c['workers']
         print 'ok'
