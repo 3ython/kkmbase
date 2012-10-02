@@ -28,54 +28,62 @@ OrganizationsList = pickle.load(file('OrganizationsList.pickle'))
 
 def main():
     for c in OrganizationsList:
-        print 'ownername:', c['ownername']
+        #print 'ownername:', c['ownername']
         if Organizations_ownernames.objects.filter(ownername=c['ownername']):
             org_name = Organizations_ownernames.objects.get(ownername=c['ownername'])
         else:
             org_name = Organizations_ownernames(ownername=c['ownername'])
             org_name.save()
 
-        print 'address:', c['address']
+        #print 'address:', c['address']
         if Addresses.objects.filter(address=c['address']):
             org_address = Addresses.objects.get(address=c['address'])
         else:
             org_address = Addresses(address=c['address'])
             org_address.save()
 
-        print 'telephonenumber:', c['telephonenumber']
+        #print 'telephonenumber:', c['telephonenumber']
         if TelephoneNumbers.objects.filter(phonenumber=c['telephonenumber']):
             org_telephone = TelephoneNumbers.objects.get(phonenumber=c['telephonenumber'])
         else:
             org_telephone = TelephoneNumbers(phonenumber=c['telephonenumber'])
             org_telephone.save()
 
-        print 'transit:', c['transit']
+        #print 'transit:', c['transit']
         if Transits.objects.filter(transit=c['transit']):
             org_transit = Transits.objects.get(transit=c['transit'])
         else:
             org_transit = Transits(transit=c['transit'])
             org_transit.save()
 
-        print 'working_time:', c['working_time']
+        #print 'working_time:', c['working_time']
         if Working_times.objects.filter(working_time=c['working_time']):
             org_worktime = Working_times.objects.get(working_time=c['working_time'])
         else:
             org_worktime = Working_times(working_time=c['working_time'])
             org_worktime.save()
 
-        print 'inn:', c['inn']
+        #print 'inn:', c['inn']
         if Individual_nalog_numbers.objects.filter(inn=c['inn']):
             org_inn = Individual_nalog_numbers.objects.get(inn=c['inn'])
         else:
             org_inn = Individual_nalog_numbers(inn=c['inn'])
             org_inn.save()
-
-        print 'inspection_number:', c['federal_tax_service_inspection_number']
+        
+        #print 'inspection_number:', c['federal_tax_service_inspection_number']
         if Federal_tax_service_inspection_numbers.objects.filter(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number']):
             org_inspectnumber = Federal_tax_service_inspection_numbers.objects.get(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number'])
         else:
-            org_inspectnumber = Federal_tax_service_inspection_numbers(federal_tax_service_inspection_number = c['federal_tax_service_inspection_number'])
+            org_inspectnumber = Federal_tax_service_inspection_numbers(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number'])
             org_inspectnumber.save()
-
+        
+        Organizations(ownername=org_name,
+                        address=org_address,
+                        working_time=org_worktime,
+                        inn=org_inn,
+                        inspection_number=org_inspectnumber,).save()
+        Organizations.telephonenumber=org_telephone
+        Organizations.transit=org_transit
+        
         # o.workers = c['workers']
-        print '_______________________'
+        print 'ok'
