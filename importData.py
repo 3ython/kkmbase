@@ -47,7 +47,7 @@ def main():
             org_telephone = TelephoneNumbers.objects.get(phonenumber=c['telephonenumber'])
         else:
             org_telephone = TelephoneNumbers(phonenumber=c['telephonenumber'])
-            org_telephone.save
+            org_telephone.save()
 
         print 'transit:', c['transit']
         if Transits.objects.filter(transit=c['transit']):
@@ -71,7 +71,9 @@ def main():
             org_inn.save()
 
         print 'inspection_number:', c['federal_tax_service_inspection_number']
-        if not c['federal_tax_service_inspection_number']=='':
+        if Federal_tax_service_inspection_numbers.objects.filter(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number']):
+            org_inspectnumber = Federal_tax_service_inspection_numbers.objects.get(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number'])
+        else:
             org_inspectnumber = Federal_tax_service_inspection_numbers(federal_tax_service_inspection_number = c['federal_tax_service_inspection_number'])
             org_inspectnumber.save()
 
