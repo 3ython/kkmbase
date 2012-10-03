@@ -24,7 +24,7 @@ from base_structure.models.federal_tax_service_inspection_numbers import Federal
 from base_structure.models.workers_status import Workers_status
 
 OrganizationsList = pickle.load(file('OrganizationsList.pickle'))
-
+RegistratorsList = pickle.load(file('RegistratorsList.pickle'))
 
 def main():
     for c in OrganizationsList:
@@ -69,21 +69,22 @@ def main():
         else:
             org_inn = Individual_nalog_numbers(inn=c['inn'])
             org_inn.save()
-        
+
         #print 'inspection_number:', c['federal_tax_service_inspection_number']
         if Federal_tax_service_inspection_numbers.objects.filter(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number']):
             org_inspectnumber = Federal_tax_service_inspection_numbers.objects.get(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number'])
         else:
             org_inspectnumber = Federal_tax_service_inspection_numbers(federal_tax_service_inspection_number=c['federal_tax_service_inspection_number'])
             org_inspectnumber.save()
-        
+
         org = Organizations(ownername=org_name,
                         address=org_address,
                         working_time=org_worktime,
                         inn=org_inn,
                         inspection_number=org_inspectnumber,).save()
-        org = Organizations.telephonenumber=org_telephone
-        org = Organizations.transit=org_transit
-        
+        org = Organizations.telephonenumber = org_telephone
+        org = Organizations.transit = org_transit
+        org.save()
+
         # o.workers = c['workers']
         print 'ok'
